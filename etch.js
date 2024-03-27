@@ -1,19 +1,37 @@
 let container = document.querySelector('#gridContainer');
-grid();
+
+let gridNum = gridNumber();
+grid(gridNum);
+
+function gridNumber(){
+    let input = prompt('enter a value:');
+    
+    while(true){
+        parseInt(input);
+        
+        if(isNaN(input) || (input > 100)||(input < 0)){
+            input = prompt('entry must be int from 1-100!');
+        }
+        else{
+            return input;
+        }
+        
+
+    }
+    
+}
 
 
-
-
-function grid(){
-
-    for(let i=0; i<16; i++){
+function grid(value){
+    
+    for(let i=0; i<value; i++){
         let row = document.createElement('div');
         row.className = 'row';
 
-        for (let x = 1; x<=16; x++){
+        for (let x = 1; x<=value; x++){
             let cell = document.createElement('div');
             cell.className = 'cell';
-            cell.innerText=(i*16) + x;
+            
             row.appendChild(cell);
         }
 
@@ -21,5 +39,18 @@ function grid(){
     }
     document.body.innertext = container.innerHTML;
 }
+
+
+
+    container.addEventListener('mouseover',(event)=>{
+        let target = event.target;
+        switch(target.className){
+            case 'cell':
+                target.setAttribute('style','background:white') 
+        }
+        
+
+    })
+   
 
 
