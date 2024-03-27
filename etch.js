@@ -1,25 +1,34 @@
 let container = document.querySelector('#gridContainer');
+let numberBtn = document.querySelector('#submitBtn');
+let numberContainer = document.querySelector('#numberContainer');
 
-let gridNum = gridNumber();
-grid(gridNum);
+let invalidEntry = document.createElement('p');
+invalidEntry.className = 'invalidEntry';
 
-function gridNumber(){
-    let input = prompt('enter a value:');
+numberContainer.appendChild(invalidEntry);
+
+
+
+numberBtn.addEventListener('click', () => {
+    //timeout existing function and replace with new input
     
-    while(true){
-        parseInt(input);
-        
-        if(isNaN(input) || (input > 100)||(input < 0)){
-            input = prompt('entry must be int from 1-100!');
-        }
-        else{
-            return input;
-        }
-        
 
+    let input = document.querySelector('.input').value;
+    
+
+    parseInt(input);
+    
+    if((isNaN(input)) || (input > 100)||(input < 1)){
+        invalidEntry.textContent = `Input: '${input}' isn't valid. Enter numbers from 1 to 100.`
+        
     }
-    
-}
+    else{
+        grid(input);
+        
+        
+        
+    }
+})
 
 
 function grid(value){
@@ -38,6 +47,7 @@ function grid(value){
         container.appendChild(row);
     }
     document.body.innertext = container.innerHTML;
+    
 }
 
 
