@@ -1,41 +1,39 @@
-let container = document.querySelector('#gridContainer');
-let numberBtn = document.querySelector('#submitBtn');
-let numberContainer = document.querySelector('#numberContainer');
+const container = document.querySelector('#gridContainer');
+const numberBtn = document.querySelector('#submitBtn');
+const numberContainer = document.querySelector('#numberContainer');
 
-let invalidEntry = document.createElement('p');
+const invalidEntry = document.createElement('p');
 invalidEntry.className = 'invalidEntry';
 
 numberContainer.appendChild(invalidEntry);
 
-let count = 0;
-numberBtn.addEventListener('click', ()=>{
-    
-})
+const count = 0;
+const initialGrid = 16;
+
+
+grid(initialGrid);
+
 
 numberBtn.addEventListener('click', () => {
     
     container.innerHTML = '';
    
         
-    let input = document.querySelector('.input').value;
-
+    const input = document.querySelector('.input').value;
+    
 
     parseInt(input);
-    
-    if((isNaN(input)) || (input > 100)||(input < 1)){
-        invalidEntry.textContent = `Input: '${input}' isn't valid. Enter numbers from 1 to 100.`
-        
+    if(input ===''){
+        grid(16);
+        input.value = 16;
+    }
+    else if((isNaN(input)) || (input > 100)||(input < 1)){
+        alert('Selection must have a minimum of 1 and a maximum of 100. Try again.')
+        grid(16)
     }
     else{
         grid(input);
-        
-        
-        
     }
-        
-    
-
-    
 })
 
 
@@ -64,11 +62,13 @@ function grid(value){
         let target = event.target;
         switch(target.className){
             case 'cell':
-                target.setAttribute('style','background:white') 
+                target.setAttribute('style','background:blue') 
         }
-        
-
     })
    
+    
+
+
+
 
 

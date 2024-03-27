@@ -1,13 +1,30 @@
 body{
-    background: green;
+    background: black;
     text-align:center;
     padding: 1rem;
-    position:fixed;
-    width:600px;
-    height: 600px;
     margin:0px;
+    display:flex;
+    flex:1;
+    flex-direction: column;
+    align-items: center;
     
     
+    
+}
+h1{
+    color:wheat;
+}
+#numberContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#submitBtn{
+    display: flex;
+    border-radius: 20px;
+    max-width: 110px;
+    align-items: center;
+    text-wrap: wrap;
 }
 
 #gridContainer{
@@ -30,8 +47,8 @@ body{
 .cell{
     display:flex;
     flex:1;
-    background-color: gray;
-    border:1px solid black;
+    background-color: rgb(82, 82, 82);
+    
     
 }
 #toolbarContainer{

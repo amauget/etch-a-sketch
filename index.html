@@ -10,22 +10,24 @@
     
 </head>
 <body>
+    <h1>Etch-A-Sketch!</h1>
     <div id="numberContainer">
-        <p>Enter how many cells: &nbsp;<input class="input" type="text"></input></p>
-        <button id="submitBtn">Click to submit</button>
+        <p>Grid size from 1-100: &nbsp;<input class="input" type="number" min="1" max="100" value="16"></input></p>
+        <button id="submitBtn">Set Grid Size</button>
+        <button id="resetBtn">Reset Colors</button>
     </div>
  
     <div id="gridContainer">
     </div>
     <div id='toolbarContainer'>
-        <button class="resetBtn">Click to Reset</button>
+        
         <div id="colorContainer">
-            <label class="colorLabel">Choose a color: </label>
+            <label id="colorLabel">Choose a color: </label>
             <select name="colors" class='colors'>
                 <option value="blue">Blue</option>
                 <option value="green">Green</option>
                 <option value="red">Red</option>
-                <option value="white">White</option>
+                <option value="white">Rainbow</option>
             </select>
         </div>
         <button class='erase'>Erase</button>
