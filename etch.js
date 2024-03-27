@@ -7,14 +7,18 @@ invalidEntry.className = 'invalidEntry';
 
 numberContainer.appendChild(invalidEntry);
 
-
+let count = 0;
+numberBtn.addEventListener('click', ()=>{
+    
+})
 
 numberBtn.addEventListener('click', () => {
-    //timeout existing function and replace with new input
     
-
+    container.innerHTML = '';
+   
+        
     let input = document.querySelector('.input').value;
-    
+
 
     parseInt(input);
     
@@ -28,6 +32,10 @@ numberBtn.addEventListener('click', () => {
         
         
     }
+        
+    
+
+    
 })
 
 
