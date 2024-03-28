@@ -97,7 +97,16 @@ function color(cell, defaultColor){
 
 const eraser = document.querySelector('.erase');
 
-
+eraser.addEventListener('click',(event)=>{
+    container.addEventListener('mouseover',(event) =>{
+        let target = event.target;
+        switch(target.className){
+            case 'cell':
+                color(target, 'rgb(82, 82, 82'); 
+        }
+    })
+        
+})
 
     
 
