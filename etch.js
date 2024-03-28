@@ -10,18 +10,13 @@ numberContainer.appendChild(invalidEntry);
 const count = 0;
 const initialGrid = 16;
 
-
 grid(initialGrid);
 
-50
 numberBtn.addEventListener('click', () => {
     
     container.innerHTML = '';
-   
-        
     const input = document.querySelector('.input').value;
     
-
     parseInt(input);
     if(input ===''){
         grid(16);
@@ -36,10 +31,7 @@ numberBtn.addEventListener('click', () => {
         grid(input);
     }
 })
-
-
 function grid(value){
-    
     for(let i=0; i<value; i++){
         let row = document.createElement('div');
         row.className = 'row';
@@ -47,18 +39,12 @@ function grid(value){
         for (let x = 1; x<=value; x++){
             let cell = document.createElement('div');
             cell.className = 'cell';
-            
             row.appendChild(cell);
         }
-
         container.appendChild(row);
-
     }
-    
     document.body.innertext = container.innerHTML;
-   
 }
-
 //default mouseover event for blue
 let defaultColor = 'blue';
 
@@ -71,10 +57,7 @@ container.addEventListener('mouseover',(event)=>{
 })
 
 let colorSelect = document.getElementById('colors');
-
-
 //mouseover event for colorselect event, updating colors.
-
 colorSelect.onchange = function(){
     container.addEventListener('mouseover',(event)=>{
         let target = event.target;
@@ -84,17 +67,6 @@ colorSelect.onchange = function(){
         }
     })
 }
-
-function color(cell, defaultColor){
-    
-        cell.setAttribute('style',`background:${defaultColor};`)
-
-    
-  
-    
-}
-   
-
 const eraser = document.querySelector('.erase');
 
 eraser.addEventListener('click',(event)=>{
@@ -105,12 +77,7 @@ eraser.addEventListener('click',(event)=>{
                 color(target, 'rgb(82, 82, 82'); 
         }
     })
-        
 })
-
-    
-
-
-
-
-
+function color(cell, defaultColor){
+    cell.setAttribute('style',`background:${defaultColor};`)
+}
