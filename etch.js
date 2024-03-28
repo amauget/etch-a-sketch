@@ -58,13 +58,13 @@ function grid(value){
 
 
 
-    container.addEventListener('mouseover',(event)=>{
-        let target = event.target;
-        switch(target.className){
-            case 'cell':
-                target.setAttribute('style','background:blue') 
-        }
-    })
+container.addEventListener('mouseover',(event)=>{
+    let target = event.target;
+    switch(target.className){
+        case 'cell':
+            target.setAttribute('style','background:blue') 
+    }
+})
    
     
 
