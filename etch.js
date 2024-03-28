@@ -13,7 +13,7 @@ const initialGrid = 16;
 
 grid(initialGrid);
 
-
+50
 numberBtn.addEventListener('click', () => {
     
     container.innerHTML = '';
@@ -26,6 +26,7 @@ numberBtn.addEventListener('click', () => {
     if(input ===''){
         grid(16);
         input.value = 16;
+        alert('Your entry was invalid. Be sure to enter a number from 1 - 100. Default of 16 squares initialized.')
     }
     else if((isNaN(input)) || (input > 100)||(input < 1)){
         alert('Selection must have a minimum of 1 and a maximum of 100. Try again.')
@@ -51,21 +52,53 @@ function grid(value){
         }
 
         container.appendChild(row);
+
     }
-    document.body.innertext = container.innerHTML;
     
+    document.body.innertext = container.innerHTML;
+   
 }
 
-
+//default mouseover event for blue
+let defaultColor = 'blue';
 
 container.addEventListener('mouseover',(event)=>{
     let target = event.target;
     switch(target.className){
         case 'cell':
-            target.setAttribute('style','background:blue') 
+           color(target, defaultColor); 
     }
 })
+
+let colorSelect = document.getElementById('colors');
+
+
+//mouseover event for colorselect event, updating colors.
+
+colorSelect.onchange = function(){
+    container.addEventListener('mouseover',(event)=>{
+        let target = event.target;
+        switch(target.className){
+            case 'cell':
+                color(target, colorSelect.value); 
+        }
+    })
+}
+
+function color(cell, defaultColor){
+    
+        cell.setAttribute('style',`background:${defaultColor};`)
+
+    
+  
+    
+}
    
+
+const eraser = document.querySelector('.erase');
+
+
+
     
 
 
